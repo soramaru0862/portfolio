@@ -545,6 +545,38 @@ body {
   }
 }
 
+// ページトップボタン
+.page_top {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #fe53bb, 0 0 0.5em #fe53bb, 0 0 0.1em #fe53bb, 0 10px 3px #000;
+  transition: 0.5s ease;
+  transform: translateY(100vh);
+
+  &.show {
+    transform: translateY(0);
+    // transition: 0.5s ease;
+  }
+
+  &::before {
+    position: absolute;
+    top: 1.8rem;
+    left: 1.3rem;
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    content: '';
+    border-top: 2px solid #fe53bb;
+    border-left: 2px solid #fe53bb;
+    transform: rotate(45deg);
+  }
+}
+
 // フッター
 .footer {
   height: 5rem;
