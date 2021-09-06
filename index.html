@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <!-- webフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vibur&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!-- css -->
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+<body>
+  <!-- ロード画面 -->
+  <div id="loading" class="loading">
+    <div class="loader"></div>
+  </div>
+
+  <!-- ヘッダー -->
+  <div class="all__wrapper">
+    <header id="home" class="header">
+      <div class="header__inner">
+        <nav>
+          <ul class="header__nav">
+            <li class="header__nav-item"><a href="#home">HOME</a></li>
+            <li class="header__nav-item"><a href="#about">ABOUT</a></li>
+            <li class="header__nav-item"><a href="#skill">SKILL</a></li>
+            <li class="header__nav-item"><a href="#work">WORK</a></li>
+            <li class="header__nav-item"><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="main-visual wrapper">
+      <h2 class="main-visual__title"><span>W</span>elcome<br>to <span>M</span>y<br><span>P</span>ortFolio</h2>
+    </section>
+
+    <!-- about -->
+    <section id="about" class="about wrapper">
+      <h2 class="sub-title">About</h2>
+      <div class="about__inner">
+        <div id="hero" class="hero">
+          <div class="hero-wrapper">
+            <div><img alt="" id="hero_main" class="hero-main"></div>
+          </div>
+        </div>
+
+        <section class="about__myself">
+          <h3 class="about__myself-title">多田良 弘樹</h3>
+          <p
+            class="about__myself-content">専門学校卒業後、音響業界にてライブ、イベントの音響やライブストリーミング配信のオペレーションを行ってきました<br>また、映画館の音響システムエンジニアとしても従事してきました</p>
+          <!-- about タブ -->
+          <div class="tab">
+            <ul class="tab__label">
+              <li><a href="#" class="active" data-id="tab__like">好きなもの</a></li>
+              <li><a href="#" data-id="tab__hobby">趣味</a></li>
+              <li><a href="#" data-id="tab__work">実績</a></li>
+            </ul>
+            <section class="tab__content active" id="tab__like">
+              <ul>
+                <li>音楽を仕事にしていた事もあり一番好きです<br>好きなアーティストはSimple Planです</li>
+                <li>アニメは頻繁に見ます<br>好きなアニメは勇者王ガオガイガーです</li>
+                <li>ガジェットをよく集めたりしています</li>
+                <li>Apple製品が好きです<br>WindowsはUIが苦手です</li>
+                <li>犬か猫かなら犬が好きです<br>ミニチュアシュナウザーが好きです</li>
+              </ul>
+            </section>
+            <section class="tab__content" id="tab__hobby">
+              <ul>
+                <li>仕事で関わっていたこともあり映画をよく見に行きます<br>関西だと塚口サンサン劇場が好きです</li>
+                <li>ライブやフェスにもコロナ渦以前はよく行っていました</li>
+                <li>本を読むのが割と好きです<br>最近は技術書ばかり読んでいて他の本が読めてません</li>
+                <li>漫画も良く読みます<br>ジョジョの奇妙な冒険とエア・ギアが大好きです</li>
+              </ul>
+            </section>
+            <section class="tab__content" id="tab__work">
+              <ul>
+                <li>Summer Sonic（2014〜2015）にステージマンとして参加</li>
+                <li>FujiRock Festival（2014〜2017）にステージマンとして参加</li>
+                <li>Summer Sonic（2016〜2018）にモニターエンジニアとして参加</li>
+                <li>味園ユニバースにてPAエンジニアに従事</li>
+                <li>ユニバーサル・スタジオ・ジャパンにて屋外ショーの運営及び音響技術指導</li>
+                <li>全国の映画館にて音響システムのチューニング・設計に従事</li>
+              </ul>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="skill" class="skill wrapper">
+      <h2 class="sub-title">Skill</h2>
+      <p class="skill__title">これまでに学んだ技術や少しでも触れたことのあるものです</p>
+      <div class="skill__item-list">
+        <div class="skill__item-wrapper">
+          <div class="skill__item"><i class="fab fa-html5"></i>
+            HTML</div>
+          <div class="skill__item"><i class="fab fa-css3-alt"></i>CSS</div>
+          <div class="skill__item"><i class="fab fa-sass"></i>Sass</div>
+          <div class="skill__item"><i class="fab fa-js-square"></i>JavaScript</div>
+          <div class="skill__item"><i class="fab fa-js"></i></i>TypeScript</div>
+          <div class="skill__item"><i class="fab fa-vuejs"></i>Vue.js</div>
+          <div class="skill__item"><i class="fab fa-js"></i>JQuery</div>
+          <div class="skill__item"><i class="fab fa-vuejs"></i>Vue Cli</div>
+        </div>
+        <div class="skill__item-wrapper">
+          <div class="skill__item"><i class="fab fa-bootstrap"></i>Bootstrap</div>
+          <div class="skill__item"><i class="fab fa-npm"></i>npm</div>
+          <div class="skill__item"><i class="fab fa-js-square"></i>eslint</div>
+          <div class="skill__item"><i class="fab fa-css3-alt"></i>stylelint</div>
+          <div class="skill__item"><i class="fab fa-node"></i>volta</div>
+          <div class="skill__item"><i class="fab fa-node"></i>nodenv</div>
+          <div class="skill__item"><i class="fas fa-laptop-code"></i>Webstorm</div>
+          <div class="skill__item"><i class="fas fa-laptop-code"></i>VisualStudio Code</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- work -->
+    <section id="work" class="work wrapper">
+      <h2 class="sub-title">Work</h2>
+      <p class="work__title">これまでに勉強のアウトプットとして作成したものです<br>画像をクリックすると各制作物にジャンプします</p>
+      <div class="work__all">
+        <div class="work__wrapper">
+          <div class="work__item"><a href="#"><img src="img/work-1.png" alt=""></a></div>
+          <div class="work__item-container">
+            <h3 class="work__item-title">ポートフォリオサイト</h3>
+            <p
+              class="work__item-text">このポートフォリオサイトです<br>JavaScriptプラグイン等を一切使用せずにVanilla JavaScriptだけで動きや切り替えを実装しています<br>ネオンサインが好きなのでネオンイメージで作成しました<br>CSSでのアニメーションを多用したため少し重いので改善していきたいです</p>
+          </div>
+        </div>
+        <div class="work__wrapper">
+          <div class="work__item"><a href="#"><img src="img/work-2.png" alt=""></a></div>
+          <div class="work__item-container">
+            <h3 class="work__item-title">数字当てゲーム</h3>
+            <p
+              class="work__item-text">1から100までのランダムに生成された数字を10回以内に当てるゲームです<br>JavaScriptを学び初めの頃に作成しました<br>今後、生成される数字の幅をユーザーが決められるようにしたり、最初の名前入力をプロンプト以外の方法で実装したいです</p>
+          </div>
+        </div>
+        <div class="work__wrapper">
+          <div class="work__item"><a href="#"><img src="img/work-3.png" alt=""></a></div>
+          <div class="work__item-container">
+            <h3 class="work__item-title">TODO管理アプリ</h3>
+            <p
+              class="work__item-text">Vue.jsを利用して作ったTODO管理アプリです<br>vue cliの練習も兼ねて作成しました<br>LocalStorageやオブジェクト等を学ぶ機会になりました<br>今後コンポーネント分割や、作成したTODOの編集機能を実装したいです</p>
+          </div>
+        </div>
+        <div class="work__wrapper">
+          <div class="work__item"><a href="#"><img src="img/work-4.png" alt=""></a></div>
+          <div class="work__item-container">
+            <h3 class="work__item-title">時計アプリ</h3>
+            <p
+              class="work__item-text">Vue.jsを使った簡単な時計アプリです<br>Vue.jsを初めて学んだときに作成しました<br>今後、国を切り替えて各国の時間が分かるようにしたいのとレスポンシブ未対応なのでレスポンシブ対応も行いたいです</p>
+          </div>
+        </div>
+        <div class="work__wrapper">
+          <div class="work__item"><a href="#"><img src="img/work-5.png" alt=""></a></div>
+          <div class="work__item-container">
+            <h3 class="work__item-title">架空のジュエリーサイトのファーストビュー</h3>
+            <p
+              class="work__item-text">ジュエリーサイトのファーストビューを作成しました<br>グローバルナビをサイドに配置し、ボタンをクリックで展開するようにしました<br>ライブラリやプラグインを使用せずにスライドショーを実装したのでJavaScriptの理解が深まりました</p>
+          </div>
+        </div>
+        <div class="work__wrapper">
+          <div class="work__item"><a href="#"><img src="img/work-6.png" alt=""></a></div>
+          <div class="work__item-container">
+            <h3 class="work__item-title">架空のジュエリーサイトのファーストビュー</h3>
+            <p
+              class="work__item-text">ジュエリーサイトのファーストビューを作成しました<br>画像を2枚ずつ表示し、それぞれにTransform: scale;を掛けています<br>JavaScriptのsetTimeOutとsetIntervalのとてもいい勉強になりました</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact wrapper">
+      <h2 class="sub-title">Contact</h2>
+      <div class="form-wrapper">
+        <form class="form-wrapper-container" action="https://api.staticforms.xyz/submit" method="post">
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">必須</span></label>
+            <input autocomplete="name" id="name" name="name" placeholder="お名前を入力してください" required type="text" />
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input autocomplete="email" id="email" name="email" placeholder="メールアドレスを入力してください" required type="text" />
+          </div>
+          <div class="form-group">
+            <label for="message">メッセージ <span class="required">必須</span></label>
+            <textarea id="message" name="message" placeholder="ご用件を入力してください" required rows="5"></textarea>
+          </div>
+          <input name="honeypot" style="display: none;" type="text" />
+          <input name="accessKey" type="hidden" value="017c0a55-f928-4a2e-a17c-9c8d3c247e0d" />
+          <!-- TODO: リダイレクトページ -->
+          <input name="redirectTo" type="hidden" value="https://example.com/contact/success" />
+          <div class="button__container">
+            <button type="submit">送信する</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <small>&copy;Hiroki Tatara 2021</small>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/common.js"></script>
+</body>
+</html>
