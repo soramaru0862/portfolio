@@ -1,6 +1,8 @@
 @use 'reset';
 
 html {
+  padding: 0;
+  margin: 0;
   font-size: 62.5%;
 }
 
@@ -8,24 +10,37 @@ body {
   font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
   font-size: 16px;
   color: #fdfdfd;
-  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg) repeat-y;
+  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg) repeat;
   background-size: contain;
 }
 
 .wrapper {
   width: 80%;
   margin: 10rem auto 0;
+
+  @media screen and(max-width: 1024px) {
+    width: 90%;
+    margin: 5rem auto 0;
+  }
+
+  @media screen and(max-width: 599px) {
+    width: 93%;
+  }
 }
 
 .sub-title {
-  padding-top: 10rem;
+  padding-top: 8rem;
   margin-bottom: 5rem;
-  margin-left: 4rem;
+  margin-left: 3rem;
   font-family: 'Vibur', cursive;
-  font-size: 8rem;
-  line-height: 8rem;
+  font-size: 7rem;
+  line-height: 5rem;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #08f7fe, 0 0 0.5em #08f7fe, 0 0 0.1em #08f7fe, 0 10px 3px #000;
   animation: flickering 5s infinite;
+
+  @media screen and(max-width: 1024px) {
+    font-size: 5rem;
+  }
 }
 
 // ロード画面
@@ -116,6 +131,22 @@ body {
 }
 
 // ヘッダー
+.menu-button {
+  display: none;
+
+  & .fas {
+    font-size: 4rem;
+  }
+
+  @media screen and(max-width: 599px) {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    z-index: 4;
+    display: block;
+  }
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -125,9 +156,30 @@ body {
   font-family: 'Vibur', cursive;
   background-color: rgba(97, 33, 180, 0.6);
 
+  @media screen and(max-width: 599px) {
+    height: 60px;
+  }
+
   &__inner {
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
+
+    @media screen and(max-width: 599px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      width: 100vw;
+      height: 100vh;
+      padding-top: 5rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      transition: 0.5s;
+      transform: translateX(-100%);
+
+      &.show {
+        transform: translateX(0);
+      }
+    }
   }
 
   &__nav {
@@ -135,11 +187,24 @@ body {
     align-items: center;
     justify-content: space-around;
 
+    @media screen and(max-width: 599px) {
+      flex-direction: column;
+    }
+
     &-item {
       font-size: 3rem;
       line-height: 80px;
       color: #fdfdfd;
       text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #08f7fe, 0 0 0.5em #08f7fe, 0 0 0.1em #08f7fe, 0 10px 3px #000;
+
+      @media screen and(max-width: 1024px) {
+        font-size: 2.2rem;
+      }
+
+      @media screen and(max-width: 599px) {
+        font-size: 3.2rem;
+        line-height: 80px;
+      }
 
       & > a {
         position: relative;
@@ -171,6 +236,10 @@ body {
   height: 750px;
   margin: 5rem auto;
 
+  @media screen and(max-width: 599px) {
+    height: 540px;
+  }
+
   &__title {
     font-family: 'Vibur', cursive;
     font-size: 20rem;
@@ -180,6 +249,15 @@ body {
     text-align: center;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #f44, 0 0 0.5em #f44, 0 0 0.1em #f44, 0 10px 3px #000;
     user-select: none;
+
+    @media screen and(max-width: 1024px) {
+      font-size: 15rem;
+    }
+
+    @media screen and(max-width: 599px) {
+      font-size: 10rem;
+      line-height: 180px;
+    }
 
     & span {
       animation: blink linear infinite 1.9s;
@@ -240,10 +318,18 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
+  @media screen and(max-width: 1024px) {
+    flex-direction: column;
+  }
 }
 
 .about__myself {
   width: calc(50% - 2rem);
+
+  @media screen and(max-width: 1024px) {
+    width: 100%;
+  }
 
   &-title {
     font-size: 2.7rem;
@@ -262,6 +348,10 @@ body {
   width: 50%;
   height: auto;
   background-color: #000;
+
+  @media screen and(max-width: 1024px) {
+    width: 100%;
+  }
 
   &-wrapper {
     display: flex;
@@ -305,8 +395,13 @@ body {
   width: 90%;
   margin: 3rem auto;
 
+  @media screen and(max-width: 599px) {
+    width: 100%;
+  }
+
   &__label {
     display: flex;
+    justify-content: space-between;
 
     & li a {
       display: inline-block;
@@ -315,13 +410,16 @@ body {
       text-align: center;
       border-radius: 10px 10px 0 0;
 
+      @media screen and(max-width: 599px) {
+        width: 100px;
+      }
+
       &.active {
         text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #fe53bb, 0 0 0.5em #fe53bb, 0 0 0.1em #fe53bb, 0 10px 3px #000;
         background: rgba(97, 33, 180, 0.6);
       }
 
       &:not(.active):hover {
-        // filter: opacity(50%);
         text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #09fbd3, 0 0 0.5em #09fbd3, 0 0 0.1em #09fbd3, 0 10px 3px #000;
         transition: 0.4s;
       }
@@ -355,6 +453,16 @@ body {
     line-height: 10rem;
     text-align: center;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #fdfdfd, 0 0 0.5em #fdfdfd, 0 0 0.1em #fdfdfd, 0 10px 3px #000;
+
+    @media screen and(max-width: 599px) {
+      font-size: 2rem;
+      line-height: 4rem;
+    }
+
+    @media screen and(max-width: 1024px) {
+      font-size: 2rem;
+      line-height: 6rem;
+    }
   }
 
   &__item {
@@ -364,11 +472,19 @@ body {
     font-size: 3rem;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #fe53bb, 0 0 0.5em #fe53bb, 0 0 0.1em #fe53bb, 0 10px 3px #000;
 
+    @media screen and(max-width: 599px) {
+      font-size: 2rem;
+    }
+
     &-list {
       display: flex;
       justify-content: space-around;
       width: 80%;
       margin: 0 auto;
+
+      @media screen and(max-width: 1024px) {
+        width: 100%;
+      }
     }
   }
 }
@@ -384,9 +500,19 @@ body {
 .work {
   &__title {
     font-size: 2.5rem;
-    line-height: 10rem;
+    line-height: 8rem;
     text-align: center;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #fdfdfd, 0 0 0.5em #fdfdfd, 0 0 0.1em #fdfdfd, 0 10px 3px #000;
+
+    @media screen and(max-width: 599px) {
+      font-size: 2rem;
+      line-height: 4rem;
+    }
+
+    @media screen and(max-width: 1024px) {
+      font-size: 2rem;
+      line-height: 6rem;
+    }
   }
 
   &__all > * + * {
@@ -397,9 +523,18 @@ body {
     width: 50%;
     text-align: center;
 
+    @media screen and(max-width: 599px) {
+      width: 100%;
+      margin-top: 3rem;
+    }
+
     &-title {
       font-size: 2.5rem;
       text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #fe53bb, 0 0 0.5em #fe53bb, 0 0 0.1em #fe53bb, 0 10px 3px #000;
+
+      @media screen and(max-width: 599px) {
+        text-align: center;
+      }
     }
 
     &-text {
@@ -409,7 +544,7 @@ body {
 
     & a {
       display: inline-block;
-      width: 300px;
+      width: 200px;
     }
 
     & a > img {
@@ -422,6 +557,11 @@ body {
 
     &-container {
       width: 50%;
+
+      @media screen and(max-width: 599px) {
+        width: 100%;
+        margin-top: 3rem;
+      }
     }
   }
 
@@ -429,6 +569,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    @media screen and(max-width: 599px) {
+      flex-direction: column;
+    }
   }
 }
 

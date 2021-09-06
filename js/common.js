@@ -1,8 +1,41 @@
 'use strict'
+// 360px以下のレスポンシブ
+window.addEventListener('DOMContentLoaded', () => {
+  const viewport = document.querySelector('meta[name="viewport"]')
+  function switchViewport () {
+    const value =
+      window.outerWidth > 360
+        ? 'width=device-width,initial-scale=1'
+        : 'width=360'
+    if (viewport.getAttribute('content') !== value) {
+      viewport.setAttribute('content', value)
+    }
+  }
+  addEventListener('resize', switchViewport, false)
+  switchViewport()
+})
 
 // ロード画面
 window.addEventListener('load', () => {
   document.getElementById('loading').classList.add('invisible')
+})
+
+// ハンバーガーメニュー
+const menuButton = document.getElementById('menu_button')
+const inner = document.getElementById('header__inner')
+const navButton = document.querySelectorAll('.header__nav-item')
+menuButton.addEventListener('click', () => {
+  inner.classList.toggle('show')
+})
+
+inner.addEventListener('click', () => {
+  inner.classList.remove('show')
+})
+
+navButton.forEach((item) => {
+  item.addEventListener('click', () => {
+    inner.classList.remove('show')
+  })
 })
 
 // about スライド
