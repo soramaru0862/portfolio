@@ -1,4 +1,5 @@
 'use strict'
+
 // ロード画面
 window.addEventListener('load', () => {
   document.getElementById('loading').classList.add('invisible')
@@ -57,13 +58,13 @@ tabLabels.forEach((clickedLabel) => {
 })
 
 // ページトップボタン
-const pageTop = document.getElementById('page_top')
-
-pageTop.addEventListener('click', () => {
-  window.scroll({
-    top: 0,
-    behavior: 'smooth'
-  })
+const pageTopBtn = document.getElementById('page_top')
+pageTopBtn.addEventListener('click', function foo () {
+  const nowY = window.pageYOffset
+  window.scrollTo(0, Math.floor(nowY * 0.8))
+  if (nowY > 0) {
+    window.setTimeout(foo, 10)
+  }
 })
 
 const pageTopShow = document.querySelector('.page_top')
@@ -74,3 +75,30 @@ window.addEventListener('scroll', () => {
     pageTopShow.classList.remove('show')
   }
 })
+
+// スムーススクロール
+window.onload = scrollTo()
+
+function scrollTo () {
+  const links = document.querySelectorAll('.scroll')
+  links.forEach(each => (each.onclick = scrollAnchors))
+}
+
+function scrollAnchors (e, respond = null) {
+  const distanceToTop = el => Math.floor(el.getBoundingClientRect().top)
+  e.preventDefault()
+  const targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href')
+  const targetAnchor = document.querySelector(targetID)
+  if (!targetAnchor) return
+  const originalTop = distanceToTop(targetAnchor)
+  window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' })
+  const checkIfDone = setInterval(function () {
+    const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2
+    if (distanceToTop(targetAnchor) === 0 || atBottom) {
+      targetAnchor.tabIndex = '-1'
+      targetAnchor.focus()
+      window.history.pushState('', '', targetID)
+      clearInterval(checkIfDone)
+    }
+  }, 100)
+}

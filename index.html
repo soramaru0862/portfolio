@@ -21,16 +21,16 @@
   </div>
 
   <!-- ヘッダー -->
-  <div class="all__wrapper">
-    <header id="home" class="header">
+  <div id="home" class="all__wrapper">
+    <header class="header">
       <div class="header__inner">
         <nav>
           <ul class="header__nav">
-            <li class="header__nav-item"><a href="#home">HOME</a></li>
-            <li class="header__nav-item"><a href="#about">ABOUT</a></li>
-            <li class="header__nav-item"><a href="#skill">SKILL</a></li>
-            <li class="header__nav-item"><a href="#work">WORK</a></li>
-            <li class="header__nav-item"><a href="#contact">CONTACT</a></li>
+            <li class="header__nav-item"><a class="scroll" href="#home">HOME</a></li>
+            <li class="header__nav-item"><a class="scroll" href="#about">ABOUT</a></li>
+            <li class="header__nav-item"><a class="scroll" href="#skill">SKILL</a></li>
+            <li class="header__nav-item"><a class="scroll" href="#work">WORK</a></li>
+            <li class="header__nav-item"><a class="scroll" href="#contact">CONTACT</a></li>
           </ul>
         </nav>
       </div>
@@ -125,10 +125,12 @@
     <!-- work -->
     <section id="work" class="work wrapper">
       <h2 class="sub-title">Work</h2>
-      <p class="work__title">これまでに勉強のアウトプットとして作成したものです<br>画像をクリックすると各制作物にジャンプします</p>
+      <p
+        class="work__title">これまでに勉強のアウトプットとして作成したものです<br>ソースコードはGitHubを使って管理しています<a href="https://github.com/soramaru0862"><i class="fab fa-github"></i></a><br>画像をクリックすると各制作物にジャンプします</p>
       <div class="work__all">
         <div class="work__wrapper">
-          <div class="work__item"><a href="#"><img src="img/work-1.png" alt=""></a></div>
+          <div class="work__item"><a href="https://soramaru0862.github.io/portfolio/" target="_blank"><img src="img/work-1.png"
+                alt=""></a></div>
           <div class="work__item-container">
             <h3 class="work__item-title">ポートフォリオサイト</h3>
             <p
@@ -136,7 +138,8 @@
           </div>
         </div>
         <div class="work__wrapper">
-          <div class="work__item"><a href="#"><img src="img/work-2.png" alt=""></a></div>
+          <div class="work__item"><a href="https://soramaru0862.github.io/number_quiz/" target="_blank"><img src="img/work-2.png"
+                alt=""></a></div>
           <div class="work__item-container">
             <h3 class="work__item-title">数字当てゲーム</h3>
             <p
@@ -144,7 +147,8 @@
           </div>
         </div>
         <div class="work__wrapper">
-          <div class="work__item"><a href="#"><img src="img/work-3.png" alt=""></a></div>
+          <div class="work__item"><a href="https://soramaru0862.github.io/eazy-todo-app/dist/" target="_blank"><img
+                src="img/work-3.png" alt=""></a></div>
           <div class="work__item-container">
             <h3 class="work__item-title">TODO管理アプリ</h3>
             <p
@@ -152,7 +156,9 @@
           </div>
         </div>
         <div class="work__wrapper">
-          <div class="work__item"><a href="#"><img src="img/work-4.png" alt=""></a></div>
+          <div class="work__item"><a href="https://soramaru0862.github.io/watch-app/dist/" target="_blank"><img
+                src="img/work-4.png" alt=""></a>
+          </div>
           <div class="work__item-container">
             <h3 class="work__item-title">時計アプリ</h3>
             <p
@@ -160,7 +166,8 @@
           </div>
         </div>
         <div class="work__wrapper">
-          <div class="work__item"><a href="#"><img src="img/work-5.png" alt=""></a></div>
+          <div class="work__item"><a href="https://soramaru0862.github.io/slide1/" target="_blank"><img src="img/work-5.png"
+                alt=""></a></div>
           <div class="work__item-container">
             <h3 class="work__item-title">架空のジュエリーサイトのファーストビュー</h3>
             <p
@@ -168,7 +175,8 @@
           </div>
         </div>
         <div class="work__wrapper">
-          <div class="work__item"><a href="#"><img src="img/work-6.png" alt=""></a></div>
+          <div class="work__item"><a href="https://soramaru0862.github.io/slide2/" target="_blank"><img src="img/work-6.png"
+                alt=""></a></div>
           <div class="work__item-container">
             <h3 class="work__item-title">架空のジュエリーサイトのファーストビュー</h3>
             <p
@@ -215,6 +223,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="js/common.js"></script>
+  <script type="module" src="js/common.js"></script>
 </body>
 </html>
