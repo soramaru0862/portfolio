@@ -11,6 +11,10 @@
   margin: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 ol,
 ul {
   list-style: none;
@@ -31,10 +35,6 @@ a {
 
   &:active {
     color: #fdfdfd;
-  }
-
-  &:focus {
-    outline: none;
   }
 }
 
